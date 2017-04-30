@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+
+<html>
+	<head>
+		<title>Mobike Project Demo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="static/css/main.css" />
+		 <!-- Custom CSS -->
+        <link rel="stylesheet" href="static/css/table.css"  />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--post query-->
+		
+		<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
+        <script type="text/javascript">
+        	var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+        </script>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<!-- <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span> -->
+							<h1 id="title">Bike Sharing Analysis</h1>
+							<p>Columbia University <br>
+								ELEN E6889 Spr'17 <br>
+								Fundamentals of Stream Processing<br>
+								Group 11<br>
+							</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+
+								Prologue's nav expects links in one of two formats:
+
+								1. Hash link (scrolls to a different section within the page)
+
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+							-->
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Mobike</span></a></li>
+								<li><a href="#motivation" id="motivation-link" class="skel-layers-ignoreHref"><span class="icon fa-th">In_Heatmap</span></a></li>
+								<li><a href="#system" id="system-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Out_Heatmap</span></a></li>
+								<li><a href="#results" id="results-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Citibike Usage</span></a></li>
+								<li><a href="#references" id="references-link" class="skel-layers-ignoreHref"><span class="icon fa-th">References</span></a></li>
+								<li><a href="#team" id="team-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Our Team</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+                             
+                            <header>
+								<h2>Available Mobike Heatmap</h2>
+							</header>
+							<div id="map" style=" width:920px; height:480px;">
+                        </div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="motivation" class="two">
+						<div class="container">
+
+						    <header>
+								<h2>City Bike Into Station Heatmap</h2>
+							</header>
+                            <div id="c_map" style=" width:920px; height:480px;">
+							    
+						</div>
+					</section>
+					
+					
+					<section id="system" class="two">
+						<div class="container">
+
+							<header>
+								<h2>City Bike Out of Station Heatmap</h2>
+							</header>
+                            <div id="c_map_2" style=" width:920px; height:480px;">
+					
+	
+						</div>
+					</section>
+					
+					
+					<section id="results" class="one dark cover">
+						<div class="container">
+							
+							<header>
+								<h2>City Bike Realtime Top Usage</h2>
+							</header>
+									  <!-- Table -->
+								<table id="data-table">
+								    <thead>
+								        <tr>
+								        	<!-- <div id = "row1">1,2,3,4,5,6,7,8,9</div> -->
+								            <td>Bike ID</td>
+								            <td>Acc_Distance</td>
+								            <td>Acc_Time</td>
+								            <td>End_Time</td>
+								            <td>End_Station</td>
+								            <td>Velocity</td>
+								        </tr>
+								    </thead>
+								    <tbody>
+								    <tr>
+								        <td colspan="3" style="text-align:center">There are no items to list...</td>
+								    </tr>
+								    </tbody>
+								</table>
+								<br />
+								<button id="btn-update">Update List</button>
+	                         
+
+	                       <!-- Table -->
+							
+						</div>
+					</section>
+					
+					<section id="references" class="three">
+						<div class="container">
+
+							<header>
+								<h2>References</h2>
+							</header>
+
+							<p align="left">Blah blah blah</p>
+
+						</div>
+					</section>
+					
+
+				<!-- About Me -->
+					<section id="team" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Our Team</h2>
+							</header>
+
+							<!-- <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a> -->
+
+
+							<div class="row">
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="/images/pic07.jpg" alt="" /></a>
+										<header>
+											<h3>Yihan Zhao</h3>
+											<p>Description and link</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="/images/pic07.jpg" alt="" /></a>
+										<header>
+											<h3>Yuanxu Zhu</h3>
+											<p>Description and link</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u$ 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="/images/pic07.jpg" alt="" /></a>
+										<header>
+											<h3>Yang yang</h3>
+											<p>Description and link</p>
+										</header>
+									</article>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p align="left">
+								<strong>Yihan Zhao: </strong>yz2996@columbia.edu</br>
+								<strong>Yang Yang: </strong>yy2694@columbia.edu</br>
+								<strong>Yuanxu Zhu: </strong>yz2990@columbia.edu</br>
+								<strong>Other Contact Information: </strong>other contact info</br>
+							</br>
+								<strong>Columbia University </strong><a href="http://www.ee.columbia.edu">Department of Electrical Engineering</a><br>
+								<strong>Class Website:</strong>
+									<a href="https://sites.google.com/site/fundamentalsofstreamprocessing/home">Columbia University ElEN 6889</a></br>
+								
+							</p>
+							
+
+							<!-- <form method="post" action="#">
+								<div class="row">
+									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="12u$">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="12u$">
+										<input type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form> -->
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; IoT Project | All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/jquery.scrolly.min.js"></script>
+			<script src="static/js/jquery.scrollzer.min.js"></script>
+			<script src="static/js/skel.min.js"></script>
+			<script src="static/js/util.js"></script>
+			<script src="static/js/table.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="static/js/main.js"></script>
+			<script src="static/js/map.js"></script>
+			<script async defer
+		        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIyhRhcHqWl60901bjufHkYmbOWWCdvUs&libraries=visualization&callback=myMap"> 
+	        </script>
+
+	</body>
+</html>
