@@ -370,7 +370,7 @@ function cleanMap() {
 var refreshId = setInterval(getGeo, 4000);
 getGeo();
 
-var in_count = 0
+var in_count = 18
 function getIn(){
          // alert(count)
          $.ajax({
@@ -385,7 +385,10 @@ function getIn(){
                in_addToHeatDaTA(res);
                // alert("Time:"+ count)
                setTimeout(in_cleanMap,4000);
-               in_count += 1
+               in_count += 1;
+               if (in_count >= 23){
+                   in_count = 0;
+               }
 
             },
             error: function(error) {
@@ -432,7 +435,10 @@ function getOut(){
                out_addToHeatDaTA(res);
                // alert("Time:"+ count)
                setTimeout(out_cleanMap,4000);
-               out_count += 1
+               out_count += 1;
+               if (out_count >= 23){
+                out_count = 0;
+               }
 
             },
             error: function(error) {
@@ -461,7 +467,7 @@ function out_cleanMap() {
 }
 
 
-getIn();
+getOut();
 var refreshId_2 = setInterval(getOut, 5000);
 
 // function getStation(){
