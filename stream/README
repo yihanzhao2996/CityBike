@@ -1,5 +1,7 @@
 stream producer and analyzer store here
 - run producer.py through python
 - run stream_consumer.py through spark-submit
+
 the ip address in producer should point to stream_consumer's, vice-versa
 the database address in stream_consumer.py should be change to your database address
+<take care with db_path in producer.py as well, should point to citibike's raw data>
