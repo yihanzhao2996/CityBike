@@ -8,3 +8,10 @@ To see the demo of our web, run app.py in web directory.
 And the web url is http://localhost:9000
 As the database of the Mobike data is running locally on out laptop, the heatmap of mobike is unavailable.
 The database of the Citi bike data is running on AWS, so the other parts of the web can run normally.
+
+stream folder stores spark stream program
+database folder stores db schema
+raw_data folder stores data
+
+Courseworks has limited space, some Mobike data has been deleted, more can be accessed from 
+https://github.com/yihanzhao2996/CityBike
